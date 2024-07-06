@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Downloader</title>
+</head>
+<body>
+    <h1>Instagram Downloader</h1>
+    <form id="downloadForm">
+        <input type="text" id="url" placeholder="Enter Instagram URL" required>
+        <button type="submit">Download</button>
+    </form>
+    <script>
+        document.getElementById('downloadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const url = document.getElementById('url').value;
+            window.location.href = `/download?url=${encodeURIComponent(url)}`;
+        });
+    </script>
+</body>
+</html>
